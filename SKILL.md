@@ -37,6 +37,43 @@ Ada 3 skill carousel yang saling melengkapi + 1 webapp generator. Bedanya di **s
 - "Buat desain startup / Product Hunt style"
 - "Carousel edukasi modern clean"
 - Topik: edukasi, teknologi, startup, AI, digital literacy, modern info
+- **User mengirim dokumen (Renstra, laporan, PDF/DOCX) dan minta dijadikan carousel** → ikuti Document-to-Carousel Workflow di bawah
+
+---
+
+## Document-to-Carousel Workflow
+
+Ketika user mengirim dokumen sumber (laporan pemerintah, Renstra, data statistik, dll) dan minta dijadikan carousel, IKUTI workflow ini:
+
+### Step 1 — Analisis Dokumen
+- Baca/simpulkan isi dokumen secara menyeluruh
+- Ekstrak **data poin kuat** (angka persentase, gap capaian vs target, fakta yang bikin kaget)
+- Identifikasi **isu strategis** dan **narasi emosional**
+
+### Step 2 — Rekomendasi Topik
+- Berikan **5–10 rekomendasi topik carousel** berdasarkan data dalam dokumen
+- Setiap topik: judul + alasan kenapa cocok untuk carousel (data kuat? emosional? visual menarik?)
+- **Prioritaskan** topik yang punya gap besar, angka mengejutkan, atau narasi kuat
+- Beri rekomendasi 1 topik terbaik beserta alasannya
+
+### Step 3 — User Pilih Topik
+- **TUNGGU user memilih** — jangan langsung generate prompt sebelum user konfirmasi
+- Jika user pilih topik di luar rekomendasi, ikuti pilihan user
+
+### Step 4 — Generate 7-Slide Prompt
+- Ikuti 7-Slide Framework persis sesuai skill
+- Output **per slide satu per satu** (bukan semua sekaligus tanpa jeda)
+- Setiap slide: headline, visual description, AI prompt lengkap
+- Gunakan **data aktual dari dokumen** di copywriting — bukan generik
+- Slide 2–3: permasalahan/data dari dokumen
+- Slide 4–5: contoh/upaya dari dokumen
+- Slide 6: rekap langkah strategis (dari dokumen)
+- Akhiri dengan Caption + CTA + Visual Direction
+
+### Pitfalls
+- **Jangan lompat ke generate prompt tanpa user pilih topik dulu.** User mau review rekomendasi dulu.
+- **Jangan pakai data generik** kalau dokumen punya angka spesifik — gunakan data aktual.
+- **Jangan rekomendasikan semua topik jadi satu carousel.** Satu topik = satu carousel = 7 slide. Kalau user mau beberapa, buat satu per satu.
 
 **Don't use for:**
 - Pixar 3D cartoon style → use `prompt-generator`
@@ -377,6 +414,37 @@ Untuk konten institusi pendidikan, TETAP gunakan style clay modern. Jangan balik
 
 ---
 
+## Single Post Quiz Format (Non-Carousel)
+
+> 📄 Contoh soal, caption template, dan topik quiz yang cocok untuk Disdikbud → `references/quiz-patterns.md`
+
+Kadang user minta quiz/konten interaktif tapi lebih cocok **single post** (1 gambar), bukan carousel 7 slide. Kenali sinyalnya:
+
+### Kapan Single Post, Kapan Carousel?
+- **Single post** → quiz 1 soal, polling, trivia, "tebak jawaban", quote card, announcement singkat
+- **Carousel** → tutorial langkah-demi-langkah, penjelasan konsep kompleks, storytelling, data bertingkat
+
+### Single Post Quiz Template
+- **Image**: Pertanyaan + pilihan A/B/C/D (Clay 3D character sebagai ilustrasi pendukung)
+- **Caption**: Pertanyaan diulang + "Jawab di komentar! 👇" + CTA
+- **Story**: Kunci jawaban + penjelasan singkat (follow-up engagement)
+
+### Copywriting Single Post Quiz
+- 1 pertanyaan per gambar, jangan padat
+- Pilihan jawaban harus ada 1 yang "bikin kaget" atau counterintuitive (viral hook)
+- Max 4 pilihan (A/B/C/D)
+- Headline = pertanyaan, bukan judul topik
+- Caption: singkat, ajakan komentar, hashtag relevan
+
+### Prompt Adaptation untuk Single Post
+- Tetap gunakan style Clay 3D character yang sama
+- Karakter clay jadi ilustrasi pendukung (misal: clay character bingung, mikir, tepuk jidat)
+- Typography tetap flat 2D modern
+- Layout: pertanyaan di atas, pilihan di tengah, karakter clay di samping/bawah
+- Aspect ratio: **1:1 (1080x1080)** untuk single post (bukan 4:5 carousel)
+
+---
+
 ## Image Generation Rule
 
 **CRITICAL: JANGAN auto-generate gambar.**
@@ -519,6 +587,7 @@ Prompts optimized for:
 11. **Kurang whitespace.** 3D Clay style butuh breathing room — jangan padat. Depth of field bantu buat separation.
 12. **"Load skill" ≠ "skip skill".** Ketika user bilang "load prompt clay" atau sejenisnya, itu berarti ikuti workflow skill — output per slide satu per satu, bukan langsung tulis semua prompt sekaligus. Skill punya framework step-by-step yang harus diikuti. Jangan bypass proses skill dan buat output manual — user meminta load skill karena ingin output SESUAI format skill.
 13. **Blokade image_generate tanpa FAL_KEY.** Jangan coba image_generate kalau FAL_KEY belum ter-set — langsung tanya user mau generate manual (copy-paste prompt ke ChatGPT/Midjourney) atau set FAL_KEY dulu. Membuang token di tool call yang pasti gagal.
+14. **Quiz dengan jawaban tidak terverifikasi.** Fakta data (luas wilayah, populasi, tahun berdiri, nama resmi) WAJIB dicek dari sumber otoritatif sebelum dipakai di quiz. Jangan pernah kira-kira. Counterintuitive ≠ salah — pastikan jawaban benar-benar valid dulu. Lihat `references/quiz-patterns.md` untuk data Sulbar terverifikasi dan teknik verifikasi dari Wikipedia.
 
 ---
 
