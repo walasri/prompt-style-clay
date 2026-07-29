@@ -443,6 +443,62 @@ Kadang user minta quiz/konten interaktif tapi lebih cocok **single post** (1 gam
 - Layout: pertanyaan di atas, pilihan di tengah, karakter clay di samping/bawah
 - Aspect ratio: **1:1 (1080x1080)** untuk single post (bukan 4:5 carousel)
 
+### Single Post Design Iterations
+
+Ketika user minta **"buat desain lain"** / **"desain 2"** / **"desain 3"** untuk single post yang sama:
+
+**Pattern:**
+- Topik sama, tapi **layout/visual approach berbeda**
+- Design 1: character-centric (karakter utama + info cards)
+- Design 2: split-screen / comparison layout (before-after, old-new)
+- Design 3: hero element focus (giant calendar, giant object, diorama scene)
+
+**What changes between designs:**
+- ✅ Layout structure (vertical stacked → horizontal split → centered hero)
+- ✅ Visual metaphor (timeline cards → transformation split → calendar flip)
+- ✅ Character position (center pointing → 2x same character → beside hero element)
+- ❌ Topik/konten inti (tetap sama)
+- ❌ Color palette (tetap konsisten)
+- ❌ Typography style (tetap flat 2D modern)
+
+**Caption reuse:** Setelah design 2-3 generated, tanya user: "Mau pakai caption design 1, atau buat baru?" — avoid redundant caption generation kalau user cuma explore visual alternatives.
+
+### Caption Length Preference (Single Post)
+
+**Default untuk single post: RINGKAS** (~70-100 kata, ~20-25 baris)
+
+User pattern dari session:
+- Caption pertama: detail lengkap (~150-200 kata) → user minta **"caption ringkas"**
+- Caption kedua: medium (~100-150 kata) → user minta **"sedikit lebih singkat"**
+- Caption ketiga: ringkas (~70-100 kata) → ✅ diterima
+
+**Structure ringkas:**
+```
+🎉 [Hook — 1 baris]
+
+📅 [Tanggal/konteks — 1 baris]
+
+[Lead — 2-3 baris inti pesan]
+
+📌 [Poin utama dengan emoji bullets — 4-6 baris max]
+
+💡 [Alasan/benefit — 2-3 baris]
+
+⏰ [CTA — 1-2 baris]
+
+—
+@handle
+#hashtag1 #hashtag2 ... (max 8 tags)
+```
+
+**Skip untuk single post:**
+- ❌ Paragraf panjang introductory
+- ❌ Breakdown detail bertingkat (simpan untuk carousel)
+- ❌ Multiple section headers
+- ❌ Repetisi informasi yang sudah di visual
+
+**Carousel caption:** Boleh lebih panjang (150-200 kata) karena 7 slide butuh context stitching.
+
 ---
 
 ## Image Generation Rule
